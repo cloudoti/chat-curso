@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:whatsapp_api/src/main_binding.dart';
 import 'package:whatsapp_api/src/presentation/home/home_screen.dart';
 import 'package:whatsapp_api/src/presentation/login/login_screen.dart';
 
@@ -10,6 +11,8 @@ class AppRoutes {
 class AppPages {
   static final pages = [
     GetPage(name: AppRoutes.login, page: () => LoginScreen()),
-    GetPage(name: AppRoutes.home, page: () => HomeScreen()),
+    GetPage(name: AppRoutes.home, page: () => HomeScreen(), bindings: [
+      MainBinding() /*, HomeBinding()*/
+    ]),
   ];
 }
