@@ -16,16 +16,6 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: AppRoutes.login,
     );
-
-    /*MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: LoginScreen(),
-    );*/
   }
 }
 

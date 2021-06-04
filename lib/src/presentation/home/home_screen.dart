@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsapp_api/src/presentation/home/HomeController.dart';
 import 'package:whatsapp_api/src/presentation/home/widget/contact_chat_item.dart';
+import 'package:whatsapp_api/src/presentation/routes/routes.dart';
 
 class HomeScreen extends GetWidget<HomeController> {
   var controller = Get.find<HomeController>();
@@ -47,31 +48,8 @@ class HomeScreen extends GetWidget<HomeController> {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (builder) {
-                                  return AlertDialog(
-                                    title: Text('Reset settings?'),
-                                    content: Text(
-                                        'This will reset your device to its default factory settings.'),
-                                    actions: [
-                                      FlatButton(
-                                        textColor: Color(0xFF6200EE),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('CANCEL'),
-                                      ),
-                                      FlatButton(
-                                        textColor: Color(0xFF6200EE),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text('ACCEPT'),
-                                      ),
-                                    ],
-                                  );
-                                });
+
+                            Get.toNamed(AppRoutes.chat, arguments: controller.listContact.value[index]);
                           },
                           child: ContactChatItem(contact: controller.listContact.value[index]),
                         );

@@ -1,4 +1,6 @@
 import 'package:whatsapp_api/src/domain/entity/contact.dart';
+import 'package:whatsapp_api/src/domain/entity/message.dart';
+import 'package:whatsapp_api/src/domain/entity/type_message.dart';
 
 final users = [
   {"username": "usuario", "password": "123456"},
@@ -37,4 +39,19 @@ final contacts = [
       lastMessage: "Photo",
       lastMessageTime: "8/25/19",
       isActive: true),
+];
+
+final messages = [
+  new Message(
+      contact: contacts[0],
+      type: TypeMessage.SEND, message: "Good morning!"),
+  new Message(
+      contact: contacts[0],
+      type: TypeMessage.SEND, message: "Japan looks amazing!"),
+  new Message(
+      contact: contacts[0],
+      type: TypeMessage.RECEIVE, message: "Do you know what time is it?"),
+  new Message(
+      contact: contacts[0],
+      type: TypeMessage.SEND, message: "It's morning in Tokyo?"),
 ];

@@ -1,0 +1,1 @@
+enum TypeMessage { RECEIVE, SEND, DATE, FILE_RECEIVE, FILE_SEND }
