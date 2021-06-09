@@ -9,6 +9,47 @@ class ContactChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ListTile(
+      leading: new CircleAvatar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.grey,
+        backgroundImage: NetworkImage(this.contact.avatarUrl!),
+      ),
+      title: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          new Text(
+            this.contact.name!,
+            style: new TextStyle(fontWeight: FontWeight.bold),
+          ),
+          new Text(
+            this.contact.lastMessageTime!,
+            style: new TextStyle(color: Colors.grey, fontSize: 14.0),
+          ),
+        ],
+      ),
+      subtitle: new Container(
+          padding: const EdgeInsets.only(top: 5.0),
+          child: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                children: [
+                  if (this.contact.lastEvent == 1)
+                    Icon(Icons.check,color: Colors.blue,),
+                  if (this.contact.lastEvent == 2)
+                    Icon(Icons.mic, color: Colors.green,),
+                  if (this.contact.lastEvent == 3)
+                    Icon(Icons.camera_alt, color: Colors.grey,),
+                  Text(this.contact.lastMessage!)
+                ],
+              ),
+              Icon(Icons.arrow_forward_ios, color: Colors.grey,),
+            ],
+          )),
+    );
+
+    /*
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,6 +87,6 @@ class ContactChatItem extends StatelessWidget {
           child: Text(this.contact.lastMessageTime!),
         ),
       ],
-    );
+    );*/
   }
 }

@@ -29,11 +29,35 @@ class _ConversationScreenState extends State<ConversationScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         title: contact != null
             ? ContactInfo(
                 contact: contact!,
               )
             : null,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.video_call,color: Colors.blue,),
+            tooltip: 'Video llamada',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Es una video llamada')));
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.call,color: Colors.blue,),
+            tooltip: 'Llamada',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Es una llamada')));
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),

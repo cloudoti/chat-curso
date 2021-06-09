@@ -20,18 +20,57 @@ class _ChatItemState extends State<ChatItem> {
         return Container(
           alignment: Alignment.centerRight,
           child: Container(
-            padding: EdgeInsets.all(7),
-            child: Text(msg.message!),
-            color: Colors.green,
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.80,
+            ),
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                ),
+              ],
+            ),
+            child: Text(
+              msg.message!,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
+
         );
       case TypeMessage.RECEIVE:
         return Container(
           alignment: Alignment.centerLeft,
           child: Container(
-            padding: EdgeInsets.all(7),
-            child: Text(msg.message!),
-            color: Colors.grey,
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.80,
+            ),
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                ),
+              ],
+            ),
+            child: Text(
+              msg.message!,
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+            ),
           ),
         );
       case TypeMessage.DATE:

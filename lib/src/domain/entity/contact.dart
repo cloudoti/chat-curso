@@ -5,6 +5,7 @@ class Contact {
   String? lastMessageTime;
   int? lastEvent;
   bool? isActive;
+  String? avatarUrl;
 
   Contact(
       {this.name,
@@ -12,5 +13,6 @@ class Contact {
       this.lastMessage,
       this.lastEvent,
       this.lastMessageTime,
-      this.isActive});
+      this.isActive,
+      this.avatarUrl});
 }

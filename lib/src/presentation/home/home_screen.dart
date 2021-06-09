@@ -48,9 +48,9 @@ class HomeScreen extends GetWidget<HomeController> {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-
                             Get.toNamed(AppRoutes.chat, arguments: controller.listContact.value[index]);
                           },
+
                           child: ContactChatItem(contact: controller.listContact.value[index]),
                         );
                       })

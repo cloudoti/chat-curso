@@ -9,7 +9,35 @@ class ContactInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return ListTile(
+      leading: new CircleAvatar(
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.grey,
+        backgroundImage: NetworkImage(this.contact.avatarUrl!),
+      ),
+      title: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          new Text(
+            this.contact.name!,
+            style: new TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+      subtitle: new Container(
+          padding: const EdgeInsets.only(top: 5.0),
+          child: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                children: [
+                  Text("Tap here for contact info",)
+                ],
+              ),
+            ],
+          )),
+    );
+    /*return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -41,6 +69,6 @@ class ContactInfo extends StatelessWidget {
           ),
         ),
       ],
-    );
+    );*/
   }
 }
