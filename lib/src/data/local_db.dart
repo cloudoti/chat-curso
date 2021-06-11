@@ -49,14 +49,14 @@ final contacts = [
 final messages = [
   new Message(
       contact: contacts[0],
-      type: TypeMessage.SEND, message: "Good morning!"),
+      type: TypeMessage.SEND, message: "Good morning!", date:"10:20"),
   new Message(
       contact: contacts[0],
-      type: TypeMessage.SEND, message: "Japan looks amazing!"),
+      type: TypeMessage.SEND, message: "Japan looks amazing!", date:"10:22"),
   new Message(
       contact: contacts[0],
-      type: TypeMessage.RECEIVE, message: "Do you know what time is it?"),
+      type: TypeMessage.RECEIVE, message: "Do you know what time is it?", date:"10:23"),
   new Message(
       contact: contacts[0],
-      type: TypeMessage.SEND, message: "It's morning in Tokyo?"),
+      type: TypeMessage.SEND, message: "It's morning in Tokyo?", date:"10:25"),
 ];
